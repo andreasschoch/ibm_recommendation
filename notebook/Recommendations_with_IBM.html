@@ -20824,7 +20824,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[226]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[241]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_user</span> <span class="o">=</span> <span class="s1">&#39;0.0&#39;</span>
@@ -20832,7 +20832,7 @@ The top 10 recommendations for user 20 are the following article names:
 <span class="c1"># What would your recommendations be for this new user &#39;0.0&#39;?  As a new user, they have no observed articles.</span>
 
 <span class="c1"># Provide a list of the top 10 article ids you would give to </span>
-<span class="n">new_user_recs</span> <span class="o">=</span> <span class="n">get_top_article_ids</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Your recommendations here</span>
+<span class="n">new_user_recs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">get_top_article_ids</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span> <span class="c1"># Your recommendations here</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">new_user_recs</span><span class="p">))</span>
 </pre></div>
 
@@ -20853,7 +20853,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{1314.0, 1162.0, 1293.0, 1330.0, 1427.0, 1364.0, 1429.0, 1170.0, 1431.0, 1304.0}
+<pre>{&#39;1427.0&#39;, &#39;1364.0&#39;, &#39;1314.0&#39;, &#39;1429.0&#39;, &#39;1162.0&#39;, &#39;1304.0&#39;, &#39;1431.0&#39;, &#39;1293.0&#39;, &#39;1330.0&#39;, &#39;1170.0&#39;}
 </pre>
 </div>
 </div>
@@ -20865,7 +20865,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[227]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[242]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">new_user_recs</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;1314.0&#39;</span><span class="p">,</span><span class="s1">&#39;1429.0&#39;</span><span class="p">,</span><span class="s1">&#39;1293.0&#39;</span><span class="p">,</span><span class="s1">&#39;1427.0&#39;</span><span class="p">,</span><span class="s1">&#39;1162.0&#39;</span><span class="p">,</span><span class="s1">&#39;1364.0&#39;</span><span class="p">,</span><span class="s1">&#39;1304.0&#39;</span><span class="p">,</span><span class="s1">&#39;1170.0&#39;</span><span class="p">,</span><span class="s1">&#39;1431.0&#39;</span><span class="p">,</span><span class="s1">&#39;1330.0&#39;</span><span class="p">]),</span> <span class="s2">&quot;Oops!  It makes sense that in this case we would want to recommend the most popular articles, because we don&#39;t know anything about these users.&quot;</span>
@@ -20889,16 +20889,9 @@ The top 10 recommendations for user 20 are the following article names:
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-227-180cf1c05a0f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">assert</span> set<span class="ansi-yellow-intense-fg ansi-bold">(</span>new_user_recs<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-yellow-intense-fg ansi-bold">==</span> set<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1314.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1429.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1293.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1427.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1162.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1364.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1304.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1170.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1431.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;1330.0&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;Oops!  It makes sense that in this case we would want to recommend the most popular articles, because we don&#39;t know anything about these users.&#34;</span>
-<span class="ansi-green-fg">      2</span> 
-<span class="ansi-green-fg">      3</span> print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;That&#39;s right!  Nice job!&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">AssertionError</span>: Oops!  It makes sense that in this case we would want to recommend the most popular articles, because we don&#39;t know anything about these users.</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>That&#39;s right!  Nice job!
+</pre>
 </div>
 </div>
 
@@ -21670,6 +21663,7 @@ How many articles in the test set are we not able to make predictions for becaus
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Result: the graph (accuracy vs. number of latent features) shows that the overall accuracy decreases if the numer of latent features increases. This is the complete opposite compared to the graph above in the exercise. Due to the bad performance of the SVD, it seems that the SVD recommendation approach is not appropriate to improve the system how users currently find articles. In a next steps it would be helpfull to figure out reasons for the bad performance (due to imbalaced data, due to size of test set, due to variety in dataset). As a next step it is maybe helpfull try out other recommendation approaches, like collaborative filterig.</strong></p>
+<p><strong>Proposal for experiment: It would be helpfull to run an A/B test to compare the actual recommendation with our new approach.</strong></p>
 
 </div>
 </div>
@@ -21722,20 +21716,6 @@ How many articles in the test set are we not able to make predictions for becaus
 
 </div>
 
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
 </div>
