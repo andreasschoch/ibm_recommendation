@@ -4,18 +4,15 @@
 Create user specific recommendations for articels
 
 ### Project structure:
-    ├── data                   
-    │   ├── articles_community.csv                 # x
-    │   ├── user-item-interactions.csv             # x
     ├── notebooks
-    │   ├── Recommendations_with_IBM.ipynb         # x
-    │   ├── Recommendations_with_IBM_Schoch.ipynb  # x
-    ├── testing
-    │   ├── project_tests.py                       # x
-    │   ├── top_5.p                                # x
-    │   ├── top_10.p                               # x
-    │   ├── top_20.p                               # x
-    │   ├── user_item_matrix.p                     # x
+    │   ├── data                   
+    │   │   ├── articles_community.csv             # dataset with community articels
+    │   │   ├── user-item-interactions.csv         # dataset with user-item-interactions
+    │   ├── Recommendations_with_IBM.ipynb         # juypter notebook with all dev code included
+    │   ├── Recommendations_with_IBM.html          # html-file of juypyter notebook
+    │   ├── project_tests.py                       # file to test correctness of developed code
+    │   ├── top_5.p                                # stored file as input to test correctness of developed code
+    │   ├── top_10.p                               # stored file as input to test correctness of developed code
+    │   ├── top_20.p                               # stored file as input to test correctness of developed code
+    │   ├── user_item_matrix.p                     # stored file as input to test correctness of developed code
     └── README.md
-
-### Instructions:
