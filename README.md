@@ -16,5 +16,3 @@ Create user specific recommendations for articels
     │   ├── top_20.p                               # stored file as input to test correctness of developed code
     │   ├── user_item_matrix.p                     # stored file as input to test correctness of developed code
     └── README.md
-
-### Instructions:
